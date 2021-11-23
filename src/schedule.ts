@@ -10,6 +10,9 @@ export const schedule = (task: any): void => {
 }
 
 const task = (pending: boolean) => {
+  // pending 只当前是否还在进行任务
+  // 如果有的话，flush 用宏任务
+  // 如果没有的话，flush 用微任务
   if (!pending && typeof Promise !== 'undefined') {
     // TODO: queueMicrotask
     return () => Promise.resolve().then(flush)

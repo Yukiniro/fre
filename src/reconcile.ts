@@ -30,6 +30,8 @@ export const enum LANE {
 }
 
 export const render = (vnode: FreElement, node: Node, config?: any): void => {
+
+  // 创建根节点fiber
   const rootFiber = {
     node,
     props: { children: vnode },
